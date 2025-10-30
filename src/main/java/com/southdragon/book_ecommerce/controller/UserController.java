@@ -1,9 +1,15 @@
 package com.southdragon.book_ecommerce.controller;
 
 import com.southdragon.book_ecommerce.dto.UpdateUserRequest;
+import com.southdragon.book_ecommerce.dto.UserRequest;
+import com.southdragon.book_ecommerce.dto.UserResponse;
+import com.southdragon.book_ecommerce.dto.base.ApiResponse;
 import com.southdragon.book_ecommerce.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
+
+import static com.southdragon.book_ecommerce.constant.MessageConstant.USER_PROFILE_SUCCESS;
 
 @RestController
 @RequestMapping("/api/user")
@@ -12,10 +18,11 @@ public class UserController {
 
     private final UserService userService;
 
-    @GetMapping("/")
-    public String getProfileUser(@RequestBody UpdateUserRequest request) {
-        userService.getProfileUser(request);
-        return "Cập nhật thông tin thành công";
+    @GetMapping("")
+    public ApiResponse<UserResponse> getProfileUser() {
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        UserResponse response =  userService.getProfileUser(username);
+        return ApiResponse.success(USER_PROFILE_SUCCESS,response);
     }
     @PutMapping("/update")
     public String updateUser( @RequestBody UpdateUserRequest request) {

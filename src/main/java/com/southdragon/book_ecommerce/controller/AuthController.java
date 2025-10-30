@@ -1,6 +1,7 @@
 package com.southdragon.book_ecommerce.controller;
 
 import com.southdragon.book_ecommerce.dto.*;
+import com.southdragon.book_ecommerce.dto.base.ApiResponse;
 import com.southdragon.book_ecommerce.service.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -13,18 +14,23 @@ public class AuthController {
     private final AuthService authService;
 
     @PostMapping("/register")
-    public AuthResponse register(@RequestBody RegisterRequest request) {
+    public ApiResponse<AuthResponse> register(@RequestBody RegisterRequest request) {
         return authService.register(request);
     }
 
     @PostMapping("/login")
-    public AuthResponse login(@RequestBody LoginRequest request) {
+    public ApiResponse<AuthResponse> login(@RequestBody LoginRequest request) {
         return authService.login(request);
     }
 
 
     @PostMapping("/forgot-password")
-    public String forgotPassword(@RequestBody ForgotPasswordRequest request) {
+    public ApiResponse<Void> forgotPassword(@RequestBody ForgotPasswordRequest request) {
         return authService.forgotPassword(request);
+    }
+
+    @PostMapping("/reset-password")
+    public ApiResponse<Void> resetPassword(@RequestBody ResetPasswordRequest request) {
+        return authService.resetPassword(request);
     }
 }
