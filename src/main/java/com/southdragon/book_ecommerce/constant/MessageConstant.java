@@ -15,6 +15,8 @@ public final class MessageConstant {
 
     public static final String USER_NOT_FOUND = "Người dùng không tồn tại!";
     public static final String USER_PROFILE_SUCCESS = "Lấy thành công thông tin người dùng!";
+    public static final String USER_UPDATE_SUCCESS = "Cập nhật thông tin thành công!";
+    public static final String PASSWORD_NOT_CORRECT = "Mật khẩu của bạn không chính xác!";
 
     // ==== PASSWORD RESET ====
     public static final String PASSWORD_RESET_EMAIL_SENT = "Email khôi phục mật khẩu đã được gửi đến: ";

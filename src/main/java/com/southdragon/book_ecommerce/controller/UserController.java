@@ -1,5 +1,6 @@
 package com.southdragon.book_ecommerce.controller;
 
+import com.southdragon.book_ecommerce.dto.ChangePasswordRequest;
 import com.southdragon.book_ecommerce.dto.UpdateUserRequest;
 import com.southdragon.book_ecommerce.dto.UserRequest;
 import com.southdragon.book_ecommerce.dto.UserResponse;
@@ -10,6 +11,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import static com.southdragon.book_ecommerce.constant.MessageConstant.USER_PROFILE_SUCCESS;
+import static com.southdragon.book_ecommerce.constant.MessageConstant.USER_UPDATE_SUCCESS;
 
 @RestController
 @RequestMapping("/api/user")
@@ -28,5 +30,10 @@ public class UserController {
     public String updateUser( @RequestBody UpdateUserRequest request) {
         userService.updateUser(request);
         return "Cập nhật thông tin thành công";
+    }
+    @PutMapping("/change-password")
+    public ApiResponse<Void> changePassword( @RequestBody ChangePasswordRequest request) {
+        userService.changePassword(request);
+        return ApiResponse.error(USER_UPDATE_SUCCESS);
     }
 }
