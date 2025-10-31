@@ -1,35 +1,21 @@
 package com.southdragon.book_ecommerce.dto;
 
 import com.southdragon.book_ecommerce.type.GenderType;
-import com.southdragon.book_ecommerce.type.UserStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
-
-@Builder
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserResponse {
-
-    private String username;
-
-    private String passwordHash;
-
-    private String email;
-
+@Builder
+public class UserUpdateRequest {
     private String fullName;
-
+    private String email;
     private String phone;
-
     private GenderType gender;
-
-    private LocalDateTime dateOfBirth;
-
+    private LocalDateTime birthDate;
     private String avatarUrl;
-
-    private UserStatus userStatus;
 }

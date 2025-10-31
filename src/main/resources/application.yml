@@ -16,8 +16,8 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username:
-    password:
+    username: tnamlong2132000@gmail.com
+    password: uzidzajxmmcizuys
     properties:
       mail:
         smtp:
@@ -28,8 +28,15 @@ server:
   port: 6868
 
 jwt:
-  secret-key: 
+  secret-key: "supersecretkeysupersecretkeysupersecretkey123123123asdsdrfwqerqw"
 
 app:
   reset-password:
     url: http://localhost:3000/reset-password?token=
+
+cloudinary:
+  cloud:
+    name:
+  api:
+    key:
+    secret:

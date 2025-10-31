@@ -25,7 +25,7 @@ public final class MessageConstant {
     public static final String PASSWORD_RESET_TOKEN_EXPIRED = "Token đã hết hạn!";
 
     // ==== COMMON / GENERIC ====
-    public static final String COMMON_INTERNAL_ERROR = "Đã xảy ra lỗi, vui lòng thử lại sau.";
+    public static final String COMMON_UPLOAD_SUCCESS = "Bạn đã upload ảnh ava thành công!";
     public static final String COMMON_ACCESS_DENIED = "Bạn không có quyền truy cập.";
     public static final String COMMON_DATA_NOT_FOUND = "Không tìm thấy dữ liệu yêu cầu.";
 }
