@@ -16,8 +16,8 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: tnamlong2132000@gmail.com
-    password: uzidzajxmmcizuys
+    username:
+    password:
     properties:
       mail:
         smtp:
@@ -28,7 +28,7 @@ server:
   port: 6868
 
 jwt:
-  secret-key: "supersecretkeysupersecretkeysupersecretkey123123123asdsdrfwqerqw"
+  secret-key:
 
 app:
   reset-password:
