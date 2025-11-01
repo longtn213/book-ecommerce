@@ -1,6 +1,6 @@
 package com.southdragon.book_ecommerce.controller;
 
-import com.southdragon.book_ecommerce.dto.*;
+import com.southdragon.book_ecommerce.dto.auth.*;
 import com.southdragon.book_ecommerce.dto.base.ApiResponse;
 import com.southdragon.book_ecommerce.service.AuthService;
 import lombok.RequiredArgsConstructor;

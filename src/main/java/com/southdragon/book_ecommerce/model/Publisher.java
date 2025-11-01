@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -18,4 +21,7 @@ public class Publisher {
     private String address;        // Địa chỉ
     private String contactEmail;   // Email liên hệ
     private String contactPhone;   // SĐT liên hệ
+
+    @OneToMany(mappedBy = "publisher", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Book> books = new ArrayList<>();
 }

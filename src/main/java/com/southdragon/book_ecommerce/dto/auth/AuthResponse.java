@@ -1,4 +1,4 @@
-package com.southdragon.book_ecommerce.dto;
+package com.southdragon.book_ecommerce.dto.auth;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,7 +1,7 @@
 package com.southdragon.book_ecommerce.service;
 
 import com.southdragon.book_ecommerce.config.JwtService;
-import com.southdragon.book_ecommerce.dto.*;
+import com.southdragon.book_ecommerce.dto.auth.*;
 import com.southdragon.book_ecommerce.dto.base.ApiResponse;
 import com.southdragon.book_ecommerce.model.User;
 import com.southdragon.book_ecommerce.repository.UserRepository;

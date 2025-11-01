@@ -1,4 +1,4 @@
-package com.southdragon.book_ecommerce.dto;
+package com.southdragon.book_ecommerce.dto.user;
 
 import lombok.Data;
 

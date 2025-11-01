@@ -1,4 +1,4 @@
-package com.southdragon.book_ecommerce.dto;
+package com.southdragon.book_ecommerce.dto.user;
 
 import com.southdragon.book_ecommerce.model.User;
 import com.southdragon.book_ecommerce.type.GenderType;

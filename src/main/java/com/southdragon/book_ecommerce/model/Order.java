@@ -36,7 +36,7 @@ public class Order {
 
     private boolean paid;                // true nếu đã thanh toán (tùy logic bạn xử lý)
 
-    private String shippingAddress;      // Ghi cứng địa chỉ giao hàng
+    private String shippingAddress;      // địa chỉ giao hàng
 
     @CreatedDate
     private LocalDateTime createdAt;

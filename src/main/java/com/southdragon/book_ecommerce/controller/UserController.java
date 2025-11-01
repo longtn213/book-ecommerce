@@ -1,13 +1,14 @@
 package com.southdragon.book_ecommerce.controller;
 
-import com.southdragon.book_ecommerce.dto.*;
 import com.southdragon.book_ecommerce.dto.base.ApiResponse;
+import com.southdragon.book_ecommerce.dto.user.*;
 import com.southdragon.book_ecommerce.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.util.List;
 
 import static com.southdragon.book_ecommerce.constant.MessageConstant.*;
 
@@ -21,17 +22,17 @@ public class UserController {
     @GetMapping("")
     public ResponseEntity<ApiResponse<UserResponse>> getProfileUser() {
         UserResponse response =  userService.getProfileUser();
-        return ResponseEntity.ok(ApiResponse.success(USER_PROFILE_SUCCESS,response));
+        return ResponseEntity.ok(ApiResponse.success(COMMON_GET_SUCCESS,response));
     }
     @PutMapping("/change-password")
     public ResponseEntity<ApiResponse<Void>> changePassword(@RequestBody ChangePasswordRequest request) {
         userService.changePassword(request);
-        return ResponseEntity.ok(ApiResponse.success(USER_UPDATE_SUCCESS));
+        return ResponseEntity.ok(ApiResponse.success(COMMON_UPDATE_SUCCESS));
     }
     // Cập nhật thông tin cá nhân
     @PutMapping("/update")
     public ResponseEntity<ApiResponse<UserProfileDto>> updateProfile(@RequestBody UserUpdateRequest request) {
-        return ResponseEntity.ok(ApiResponse.success(USER_UPDATE_SUCCESS,userService.updateProfile(request)));
+        return ResponseEntity.ok(ApiResponse.success(COMMON_UPDATE_SUCCESS,userService.updateProfile(request)));
     }
 
     // Upload avatar
@@ -40,13 +41,13 @@ public class UserController {
         return ResponseEntity.ok(ApiResponse.success(COMMON_UPLOAD_SUCCESS,userService.uploadAvatar(file)));
     }
 
-//    // Danh sách đơn hàng
-//    @GetMapping("/orders")
-//    public ResponseEntity<ApiResponse<List<OrderSummaryDto>>> getOrders() {
-//        return ResponseEntity.ok(ApiResponse.success(userService.getUserOrders()));
-//    }
-//
-//    // Wishlist
+    // Danh sách đơn hàng
+    @GetMapping("/orders")
+    public ResponseEntity<ApiResponse<List<OrderUserSummaryDto>>> getOrders() {
+        return ResponseEntity.ok(ApiResponse.success(USER_ORDER_SUCCESS,userService.getUserOrders()));
+    }
+
+    // Wishlist
 //    @GetMapping("/wishlist")
 //    public ResponseEntity<ApiResponse<List<WishlistItemDto>>> getWishlist() {
 //        return ResponseEntity.ok(ApiResponse.success(userService.getWishlist()));
